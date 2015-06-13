@@ -75,7 +75,19 @@ function dtOptionsBuilder() {
             }
             return this;
         },
-
+        /**
+         * Set the LengthMenu of the datatables
+         * @param aLengthMenu the LengthMenu
+         * @returns {DTOptions} the options
+         */
+        withLengthMenu: function(aLengthMenu) {
+            if (angular.isArray(aLengthMenu)) {
+                this.aLengthMenu = aLengthMenu;
+            } else {
+                throw new Error('The Length Menu type must be provided');
+            }
+            return this;
+        }
         /**
          * Set the language of the datatables
          * @param language the language
